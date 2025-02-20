@@ -1,0 +1,117 @@
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-inner slimscroll">
+    <div id="sidebar-menu" class="sidebar-menu">
+      {% if user.user_type == '1' %}
+      <ul>
+        <li class="">
+          <a href=""
+            ><i class="fas fa-baseball-ball"></i> <span>DASHBOARD</span></a
+          >
+        </li>
+
+
+        <li>
+          <a href=""><i class="fas fa-sign-out-alt"></i> <span>योजना अभिलेखिकरण</span></a>
+        </li>
+        <li class="submenu">
+          <a href="#"
+            ><i class="fa-solid fa-building"></i>
+            <span>उपभोक्ता समिति व्यवस्थापन</span> <span class="menu-arrow"></span
+          ></a>
+          <ul>
+          
+            <li><a href="">उपभोक्ता समिति थप्नुहोस</a></li>
+            <li><a href="">लागत अनुमान थप्नुहोस</a></li>
+            <li><a href="">कागजात तयारी गर्नुहोस</a></li>
+             <li><a href=""> अन्तिम विल मुल्यांकन</a></li>
+            <li><a href="">अन्तिम विल कागजात</a></li>
+          </ul>
+        </li>
+         
+        <li class="submenu">
+          <a href="#"
+            ><i class="fa-solid fa-building"></i>
+            <span>बोलपत्र ठेक्का  व्यवस्थापन</span> <span class="menu-arrow"></span
+          ></a>
+          <ul>
+             <li><a href=""> ठेक्काको विवरण प्रवेष्ठी </a></li>
+
+             <li><a href=""> आसय र PG माग </a></li>
+    
+            <li><a href="">बोलपत्र स्वीकृती तयार </a></li>
+             <li><a href="">सम्झौता र कार्यदेश </a></li>
+             <li><a href="">अन्तिम विल भुक्तानी </a></li>
+  
+          </ul>
+        </li>
+          <li class="submenu">
+          <a href="#"
+            ><i class="fa-solid fa-building"></i>
+            <span>दरभाउपत्र खरिद व्यवस्थापन</span> <span class="menu-arrow"></span
+          ></a>
+          <ul>
+             <li><a href=""> सिचिकृत गर्नुहोस </a></li>
+             <li><a href=""> सिचिकृत विवरण </a></li>
+             <li><a href=""प्रस्ताव माग गर्नुहोस </a></li>
+             <li><a href=""> Quatation प्रस्ताव विवरण </a></li>
+             <li><a href=""> अन्तिम विल प्रवेष्टी </a></li>
+             <li><a href=""> अन्तिम विल विवरणहरु </a></li>
+
+            
+  
+          </ul>
+        </li>
+        <li class="submenu">
+          <a href="#"
+            ><i class="fa-solid fa-building"></i>
+            <span>बैंक ग्यारेन्टी व्यवस्थापन</span> <span class="menu-arrow"></span
+          ></a>
+          <ul>
+            <li><a href=""> Final Valuation</a></li>
+            <li><a href="">View Final Valuation</a></li>
+  
+          </ul>
+        </li>
+
+
+           <li class="submenu">
+          <a href="#"
+            ><i class="fas fa-biking"></i>
+            <span>प्रतिबेदनहरु</span> <span class="menu-arrow"></span
+          ></a>
+          <ul>
+            
+            <li><a href="">योजनाको विवरण</a></li>
+              <li><a href="">उपभोक्ता समितको विवरण</a></li>
+              <li><a href=""> उसबाट सञ्चालित योजना</a></li>
+              <li><a href=""> बोलपत्रबाट सञ्चालित योजनाहरु </a></li>
+              <li><a href=""> कोटेशनबाट सञ्चालित योजनाहरु </a></li>
+    
+           
+          </ul>
+       
+
+        <li>
+          <a href=""><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+        </li>
+      </ul>
+
+
+      
+
+      {% else %}
+
+   
+   
+
+        <li>
+          <a href="{% url 'logout' %}"
+            ><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a
+          >
+        </li>
+      </ul>
+
+      {% endif %}
+    </div>
+  </div>
+</div>

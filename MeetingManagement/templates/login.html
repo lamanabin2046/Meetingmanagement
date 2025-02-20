@@ -1,0 +1,171 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project Management Syste</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://sutra.fcgo.gov.np/sutra2/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://sutra.fcgo.gov.np/sutra2/css/bootstrap-theme.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://sutra.fcgo.gov.np/sutra2/css/loginstyle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://sutra.fcgo.gov.np/sutra2/js/jquery-3.2.1.min.js"></script>
+    <script>
+      var AppName = "SuTRA";
+      var AppFullName = "Sub-National Treasury Regulatory Application";
+      var CopyRight = "FCGO";
+    </script>
+    <script src="https://sutra.fcgo.gov.np/sutra2/sjs/ajax.ss.js"></script>
+  </head>
+  <body>
+    <div
+      id="progress"
+      align="center"
+      style="position: absolute; z-index: 102"
+    ></div>
+    <div class="container">
+      <div class="row vertical-offset-100">
+        <div class="col-md-4 col-md-offset-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="row-fluid user-row">
+                <img
+                  src="https://sutra.fcgo.gov.np/sutra2/images/nepal-gov-logo.png"
+                  class="img-responsive"
+                  alt="Government of Nepal"
+                  height="90"
+                  width="100"
+                />
+              </div>
+            </div>
+            <div class="panel-body">
+              <div style="text-align: center; color: #265a88"></div>
+              <div style="text-align: center; color: #265a88">
+                Planning Management System
+              </div>
+              <form
+                accept-charset="UTF-8"
+                role="form"
+                class="form-signin"
+                id="form1"
+                name="form1"
+                method="POST"
+                action="{% url 'doLogin'%}"
+                onSubmit="return forest_val(this, 'div_error');"
+              >
+                {% csrf_token %}
+                <fieldset>
+                  <div class="login_result"></div>
+                  <label class="panel-login"> </label>
+                  <input
+                    class="form-control"
+                    placeholder="Username"
+                    id="username"
+                    type="text"
+                    name="email"
+                  />
+                  <input
+                    class="form-control"
+                    placeholder="Password"
+                    id="password"
+                    type="password"
+                    name="password"
+                  />
+                  <input type="hidden" id="sheight" name="sheight" />
+                  <input type="hidden" id="swidth" name="swidth" />
+                  <input
+                    type="hidden"
+                    id="useraction"
+                    name="useraction"
+                    value="0"
+                  />
+                  <script type="text/javascript">
+                    document.getElementById("sheight").value =
+                      window.innerHeight;
+                    document.getElementById("swidth").value = window.innerWidth;
+                  </script>
+                  Forget Password?
+                  <a href="">Click here</a>
+                  <br /><br />
+                  <input
+                    class="btn btn-lg btn-primary btn-block"
+                    type="submit"
+                    id="login"
+                    value="Login &raquo;"
+                  />
+                </fieldset>
+              </form>
+            </div>
+          </div>
+          <script type="text/javascript">
+            var left = screen.width / 2;
+            var t = screen.height / 2;
+            //alert(t);
+            document.getElementById("progress").style.left = left + "px";
+            document.getElementById("progress").style.top = t + "px";
+
+            function clearlogin() {
+              document.getElementById("form1").reset();
+            }
+            function checklogin() {
+              if (document.getElementById("username").value == "") {
+                alert("Please enter login name");
+                document.getElementById("username").focus();
+                return;
+              }
+              if (document.getElementById("password").value == "") {
+                alert("Please enter your password");
+                document.getElementById("password").focus();
+                return;
+              }
+              submitform(document.getElementById("form1"), "div_error");
+              document.getElementById("form1").submit();
+            }
+
+            function showsms() {
+              alert(
+                "Please send following SMS to 7001 to reset your password.\n\nSTECH RESETPWD"
+              );
+            }
+          </script>
+        </div>
+      </div>
+    </div>
+    <script src="https://sutra.fcgo.gov.np/sutra2/js/bootstrap.min.js"></script>
+    <script src="https://sutra.fcgo.gov.np/sutra2/js/function.js"></script>
+
+    <div id="div_error" style="overflow: visible"></div>
+    <iframe
+      id="iframe"
+      name="iframe"
+      style="height: 0px; width: 0px; display: none"
+    ></iframe>
+    <script type="text/javascript">
+      /*
+		var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+		(function() {
+			var s1 = document.createElement("script"), s0 = document
+					.getElementsByTagName("script")[0];
+			s1.async = true;
+			s1.src = 'https://embed.tawk.to/5cca93d52846b90c57ac7193/default';
+			s1.charset = 'UTF-8';
+			s1.setAttribute('crossorigin', '*');
+			s0.parentNode.insertBefore(s1, s0);
+		})();
+		*/
+    </script>
+    <!--End of Tawk.to Script-->
+  </body>
+</html>
